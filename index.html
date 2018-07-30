@@ -1,0 +1,44 @@
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <tdc-component></tdc-component>
+    <tdc-component></tdc-component>
+    <tdc-component></tdc-component>
+</div>
+<div id="app1">
+    <fruit-component
+            v-for="item in fruit"
+            v-bind:fruit="item"
+            v-bind:key="item.id"
+    ></fruit-component>
+</div>
+<div id = "app3">
+    <p>
+        <input type="text" v-model="message">
+    </p>
+    <child message="My Test Component" v-bind:message="message"></child>
+    <child1 my-say="1"></child1>
+    <child1 v-bind:my-say="1"></child1>
+    <child2 my-say="Hello!"></child2>
+</div>
+
+<div id = "app4">
+    <p>
+        <input type="text" v-model="message4">
+    </p>
+    <child4 v-bind:message4="message4"></child4>
+</div>
+<div id = "app5">
+    <p>Original message: "{{ message }}"</p>
+    <p>Computed reversed message: "{{ reverseMessage }}"</p>
+</div>
+
+
+
+<script src="index.js"></script>
+</body>
+</html>
